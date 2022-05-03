@@ -1,13 +1,15 @@
 To compile and run on edoras:
 
-$ bison -d test1.y
-$ flex test1.l
-$ gcc lex.yy.c test1.tab.c -o test1 -ll 
-./test1
+$ bison -d parser.y
+$ flex parser.l
+$ gcc lex.yy.c parser.tab.c -o test1 -ll 
+./parser
 
 
-INPUT:
-ID OP ID; 
+EXPRESSIONS:
 
+identifier OP identifier (does not need semicolon)
 
-(not returning valid even though it should)
+ASSIGNMENT: 
+
+identifier "=" identifier; (needs semicolon)
